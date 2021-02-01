@@ -1,8 +1,12 @@
+const dotenv = require('dotenv');
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+
+dotenv.config();
+console.log(`Your API key is ${process.env.API_KEY}`);
 
 const app = express()
 app.use(cors())
