@@ -1,3 +1,5 @@
+const baseUrl = "https://api.meaningcloud.com/sentiment-2.1";
+
 function handleSubmit(event) {
     event.preventDefault()
 
