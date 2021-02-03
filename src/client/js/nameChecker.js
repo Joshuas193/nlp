@@ -1,4 +1,4 @@
-/*function checkForName(inputText) {
+/* function checkForName(inputText) {
     console.log("::: Running checkForName :::", inputText);
     let names = [
         "Picard",
@@ -14,7 +14,3 @@
 }
 
 export { checkForName } */
-
-function validateInput() {
-    
-}
