@@ -1,22 +1,22 @@
-const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?';
-const apiKey = 'key=6aa96edd41d49a3229fe5debcc178470&lang=en&url=';
-
-function handleSubmit(event) {
+const handleSubmit = async (event) => {
     event.preventDefault()
     // check what text was put into the form field
     const userInput = document.getElementById('userInput').value;
-    getData(baseUrl, apiKey, userInput)
+    postData('api', { userInput });
+    console.log(userInput);
+    const baseUrl = '/api';
+    const response = await fetch(baseUrl);
+    const json = await response.json();
+    console.log(json);
 }
 
-const getData = async (baseUrl, apiKey, userInput) => {
-    const res = await fetch (baseUrl+apiKey+userInput)
-    try {
-        const data = await res.json();
-        console.log(data);
-        return data;
-    }   catch(error)    {
-        console.log('error', error);
-    }
+const postData = async (url = '', data = {}) => {
+    const response  = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
 }
 
 export { handleSubmit }

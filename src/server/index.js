@@ -6,6 +6,9 @@ const bodyParser = require('body-parser')
 const app = express();
 const fetch = require('node-fetch'); //added to make fetch requests from the server
 
+
+projectData = {};
+
 app.use(cors());
 // to use json
 app.use(bodyParser.json());
@@ -22,5 +25,21 @@ app.listen(8081, function () {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+  res.sendFile('dist/index.html')
+})
+
+app.get('/api', async (req, res) => {
+  userInput = projectData;
+  const baseUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${userInput}`;
+  console.log(baseUrl);
+  const response = await fetch(baseUrl);
+  const json = await response.json();
+  res.json(json);
+  //console.log(json);
+});
+
+app.post('/api', (req, res) => {
+  projectData = req.body;
+  res.send(projectData);
+  console.log(projectData);
 })
