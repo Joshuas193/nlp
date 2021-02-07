@@ -14,9 +14,14 @@ const postData = async ( url = '', data = {}) => {
       body: JSON.stringify(data),
     });
     try {
-      const newData = await response.json();
-      console.log(newData);
-      return newData;
+      const data = await response.json()
+      .then(data => {
+          document.getElementById('score_tag').innerHTML = `Score Tag: ${data.score_tag}`;
+          document.getElementById('agreement').innerHTML = `Agreement: ${data.agreement}`;
+          document.getElementById('subjectivity').innerHTML = `Subjectivity: ${data.subjectivity}`;
+          document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`;
+          document.getElementById('irony').innerHTML = `Irony: ${data.irony}`;
+      });
     } catch(error) {
       console.log('error', error);
     }
