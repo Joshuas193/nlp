@@ -28,9 +28,21 @@ app.get('/', function (req, res) {
   res.sendFile('dist/index.html')
 })
 
-app.get('/apiData', async (req, res) => {
-  const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=https://www.nbcnews.com/politics/joe-biden/biden-administration-remove-houthis-terrorist-list-reversing-another-trump-policy-n1256923`;
+app.post('/apiData', async (req, res) => {
+  const userInput = req.body.userInput;
+  const baseUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}`;
+  const options = `&lang=en&model=general&url=${userInput}`;
+  const apiUrl = (baseUrl+options);
   const fetchRes = await fetch(apiUrl);
-  const json = await fetchRes.json();
-  res.json(json);
+  const json = await fetchRes.json()
+  //console.log(json)
+  .then((data) => {
+    res.send({
+      score_tag: data.score_tag,
+      agreement: data.agreement,
+      subjectivity: data.subjectivity,
+      confidence: data.confidence,
+      irony: data.irony
+    });
+  });
 });
