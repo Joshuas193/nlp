@@ -1,4 +1,4 @@
-const handleSubmit = async (event) => {
+function handleSubmit(event) {
   event.preventDefault();
   // check what text was put into the form field
   const userInput = document.getElementById("userInput").value;
@@ -14,7 +14,7 @@ const postData = async (url = "", data = {}) => {
     body: JSON.stringify(data),
   });
   try {
-    const data = await response.json()
+    await response.json()
     .then((data) => {
       console.log(data);
       document.getElementById("score_tag").innerHTML = `Score Tag: ${data.score_tag}`;
