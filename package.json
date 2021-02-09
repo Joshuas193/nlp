@@ -39,6 +39,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./src/client/__tests__/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "./src/client/__tests__/setupTests.js"
+    ]
   }
 }

@@ -3,6 +3,7 @@ function handleSubmit(event) {
   // check what text was put into the form field
   const userInput = document.getElementById("userInput").value;
   console.log(userInput);
+  Client.checkUrl(userInput);
   postData("http://localhost:8081/apiData", { userInput: userInput });
 };
 
