@@ -1,5 +1,7 @@
 form {
+    background-color: rgb(250, 249, 248);
     border: 1px solid #545454;
+    box-shadow: 3px 3px 5px grey;
     border-radius: 3px;
     padding: 40px;
 }
@@ -9,4 +11,9 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+
+    &#submit {
+    font-size: 1em;
+    font-weight: 700;
+    }
 }

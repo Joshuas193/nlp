@@ -14,7 +14,7 @@ const postData = async (url = "", data = {}) => {
     body: JSON.stringify(data),
   });
   try {
-    await response.json()
+    const data = await response.json()
     .then((data) => {
       console.log(data);
       document.getElementById("score_tag").innerHTML = `Score Tag: ${data.score_tag}`;

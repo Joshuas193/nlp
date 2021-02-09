@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="">Logo</div>
-      <div class="">navigation</div>
+      <div class="">Navigation</div>
     </header>
 
     <main>
@@ -20,19 +20,20 @@
             type="text"
             name="input"
             value=""
-            placeholder="Url"
+            placeholder="Paste a news article URL here then press submit"
           >
           <input
+            id="submit"
             type="submit"
             name=""
-            value="submit"
+            value="Submit"
             onclick="return Client.handleSubmit(event)"
             onsubmit="return Client.handleSubmit(event)"
           >
         </form>
       </section>
 
-      <section>
+      <section id="web_results">
         <strong>Form Results:</strong>
         <div id="results">
           <div id="score_tag"></div>
@@ -45,7 +46,7 @@
     </main>
 
     <footer>
-      <p>This is a footer</p>
+      <p>Author: Joshua Swartzell 2021&copy;</p>
     </footer>
   </body>
 </html>
