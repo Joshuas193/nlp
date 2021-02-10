@@ -9,7 +9,7 @@ You can find Node [here](https://nodejs.org/en/).
 Install the LTS version.
 
 Once Node is installed you will need to install the app from the command line.
-* To Install the app, enter on the command line    **npm install** 
+* To Install the app, enter on the command line    **npm install**
 * To build the app enter      **npm run build-prod**
 * Then to start the server    **npm run start**
 * Open up a browser page and enter **localhost:8081** in the address bar.
