@@ -25,3 +25,12 @@ and posted on the page. A great deal of information is returned so I have narrow
 * Subjectivity
 * Confidence
 * Irony
+
+
+### Validation:
+There is a JS function that ensures that you haven't entered a invalid URL but you can enter it in the format you want
+so if its https://example.com/article or www.example.com/article or just example.com/article they will all work. Although
+the third example is somewhat slowerw to return the data. If you leave off the .com it will alert you that you need to enter a valid article.
+
+### Styling
+I went with very minimal styling as the point of the project was setting up Webpack with loaders and plug-ins and making API calls from the server.
