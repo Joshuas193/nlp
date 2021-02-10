@@ -1,6 +1,6 @@
 # Natural Language Processing using MeaningCloud Sentiment Analysis
 
-This project will analyze a news or other article using meaningCloud's API. A huge amount od data is returned so we're just utilizing a few of the data tytpes returned.
+This project will analyze a news or other article using meaningCloud's API. A huge amount of data is returned so we're just utilizing a few of the data tytpes returned.
 
 ### What is sentiment analysis?
 Well in Meaning Cloud's own words Sentiment Analysis is MeaningCloud's solution for performing a detailed multilingual sentiment analysis of texts from different sources.
