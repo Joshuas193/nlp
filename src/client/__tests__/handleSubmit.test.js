@@ -1,13 +1,9 @@
 import { handleSubmit } from "../js/handleSubmit";
 
-handleSubmit();
+test('handleSubmit is declared', () => {
+  expect(handleSubmit).toBeDefined();
+});
 
-describe("Test: 'handleSubmit()'", () => {
-  test('handleSubmit should be defined', () => {
-    expect(handleSubmit).toBeDefined();
-  });
-
-  test('Checking handleSubmit is a function', () => {
-    expect(typeof handleSubmit).toBeDefined('function')
-  })
+test('handleSubmit is a function', () => {
+  expect(typeof handleSubmit).toBe('function');
 });

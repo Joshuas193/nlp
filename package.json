@@ -41,7 +41,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "./src/client/__tests__/setupTests.js"
+      "./src/client/js/setupTests.js"
     ]
   }
 }
