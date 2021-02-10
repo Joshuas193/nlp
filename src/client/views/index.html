@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Natural Language Processor</title>
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#" />
   </head>
 
   <body>
@@ -21,7 +21,7 @@
             name="input"
             value=""
             placeholder="Paste a news article URL here then press submit"
-          >
+          />
           <input
             id="submit"
             type="submit"
@@ -29,7 +29,7 @@
             value="Submit"
             onclick="return Client.handleSubmit(event)"
             onsubmit="return Client.handleSubmit(event)"
-          >
+          />
         </form>
       </section>
 
@@ -49,6 +49,13 @@
       <p>Author: Joshua Swartzell 2021&copy;</p>
     </footer>
     <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
     </script>
   </body>
 </html>
