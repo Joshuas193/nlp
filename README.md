@@ -11,7 +11,7 @@ Besides polarity at sentence and global level, Sentiment Analysis uses advanced 
 
 ## Instructions for using the app.
 
-## You will need to sign up for an API key
+### You will need to sign up for an API key
 Go to meaningCloud's website and sign up for an API_KEY. Click this [Link](https://www.meaningcloud.com/developer/create-account)
 Once you have signed up you can get an API key for free. You will then need to go into the file I have ccalled .env_template.
 Chaneg the name of this to just **.env** and paste in your API key you got from Meaning Cloud.
